@@ -19,14 +19,13 @@ function createWindow() {
     }
   })
 
-  let toggleOverlayHotkey = 'CommandOrControl+6'
+  let toggleOverlayHotkey = 'F10'
   let isOverlayOn = false
 
   globalShortcut.register(toggleOverlayHotkey, () => {
     isOverlayOn = !isOverlayOn
     mainWindow.setIgnoreMouseEvents(isOverlayOn)
     mainWindow.webContents.send('overlay-mode', isOverlayOn)
-    console.log('overlay', isOverlayOn)
   })
 
   mainWindow.setAlwaysOnTop(true, 'screen')
@@ -63,16 +62,16 @@ app.whenReady().then(() => {
     optimizer.watchWindowShortcuts(window)
   })
 
-  ipcMain.on('close-window', () => {
-    const currentWindow = BrowserWindow.getFocusedWindow()
-    if (currentWindow) {
-      currentWindow.close
-    }
-  })
   ipcMain.on('minimize-window', () => {
     const currentWindow = BrowserWindow.getFocusedWindow()
     if (currentWindow) {
-      currentWindow.minimize
+      currentWindow.minimize()
+    }
+  })
+  ipcMain.on('close-window', () => {
+    const currentWindow = BrowserWindow.getFocusedWindow()
+    if (currentWindow) {
+      currentWindow.close()
     }
   })
 
