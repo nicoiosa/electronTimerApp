@@ -67,24 +67,23 @@ const Timer = ({ isOverlay }) => {
       ) : (
         <div>
           <div className="flex justify-center">
-            <h1 className="text-green-500 text-6xl">{`${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`}</h1>
+            <h1 className="text-emerald-500 text-6xl">{`${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`}</h1>
           </div>
           <div
             id="timer-button"
             className={
-              !isOverlay ? 'text-stone-500 flex justify-center bg-black/10 rounded-xl' : 'hidden'
+              !isOverlay
+                ? 'mt-3 text-stone-500 flex justify-center bg-black/10 rounded-xl'
+                : 'hidden'
             }
           >
             {isActive ? (
               <>
-                <button
-                  className="start text-5xl text-yellow-500 m-2"
-                  onClick={() => setIsActive(false)}
-                >
-                  ||
+                <button className="text-2xl text-amber-400 m-2" onClick={() => setIsActive(false)}>
+                  &#9612;&#9612;
                 </button>
                 <button
-                  className="start text-5xl text-red-500 m-2"
+                  className="text-5xl text-rose-600 m-2"
                   onClick={() => {
                     setIsActive(false)
                     setHours(0)
@@ -97,16 +96,10 @@ const Timer = ({ isOverlay }) => {
               </>
             ) : (
               <>
-                <button
-                  className="start text-5xl text-green-500 m-2"
-                  onClick={() => setIsActive(true)}
-                >
+                <button className="text-5xl text-emerald-400 m-2" onClick={() => setIsActive(true)}>
                   &#9658;
                 </button>
-                <button
-                  className="start text-4xl text-yellow-500 m-2"
-                  onClick={() => setIsEditing(true)}
-                >
+                <button className="text-4xl text-amber-400 m-2" onClick={() => setIsEditing(true)}>
                   &#9998;
                 </button>
               </>

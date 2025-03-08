@@ -10,8 +10,10 @@ function createWindow() {
     height: 200,
     show: false,
     frame: false,
-    transparent: true,
     autoHideMenuBar: true,
+    resizable: false,
+    fullscreenable: false,
+    transparent: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
@@ -19,6 +21,7 @@ function createWindow() {
     }
   })
 
+  mainWindow.setMaximizable(false)
   let toggleOverlayHotkey = 'F10'
   let isOverlayOn = false
 
