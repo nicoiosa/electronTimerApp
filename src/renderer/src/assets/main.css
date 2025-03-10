@@ -3,6 +3,3 @@
 html {
   font-family: 'Courier New', Courier, monospace;
 }
-button:hover {
-  filter: brightness(150%);
-}
