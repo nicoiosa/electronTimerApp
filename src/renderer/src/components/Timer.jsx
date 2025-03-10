@@ -74,9 +74,9 @@ const Timer = ({ isOverlay, isEditing, setIsEditing }) => {
       {isEditing ? (
         <div className="w-full flex justify-center font-mono relative">
           <div>
-            <InputField label={'Hours'} value={hours} onChange={(e) => handleSetHours(e)} />
-            <InputField label={'Minutes'} value={minutes} onChange={(e) => handleSetMinutes(e)} />
-            <InputField label={'Seconds'} value={seconds} onChange={(e) => handleSetSeconds(e)} />
+            <InputField label={'Horas'} value={hours} onChange={(e) => handleSetHours(e)} />
+            <InputField label={'Minutos'} value={minutes} onChange={(e) => handleSetMinutes(e)} />
+            <InputField label={'Segundos'} value={seconds} onChange={(e) => handleSetSeconds(e)} />
             <button
               className="hover:brightness-120 cursor-pointer bg-emerald-500 text-stone-200 px-20 py-1 rounded-xl text-xl mt-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-100"
               onClick={handleSetTime}

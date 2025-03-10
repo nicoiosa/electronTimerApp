@@ -14,7 +14,7 @@ const InputField = ({ label, value, onChange, placeHolder }) => {
         onChange={handleInputChange}
         placeholder={placeHolder}
         className={
-          label == 'Hours'
+          label == 'Horas'
             ? 'w-20 bg-transparent text-emerald-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300'
             : 'w-12 bg-transparent text-emerald-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300'
         }
