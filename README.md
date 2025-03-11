@@ -4,6 +4,7 @@ A timer application made with Electron and React.
 
 ## Technologies Used
 
+- Node.js
 - electron-vite
 - tailwindcss
 
