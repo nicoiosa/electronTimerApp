@@ -10,8 +10,10 @@ function createWindow() {
     height: 200,
     show: false,
     frame: false,
-    transparent: true,
     autoHideMenuBar: true,
+    resizable: false,
+    fullscreenable: false,
+    transparent: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
@@ -19,14 +21,14 @@ function createWindow() {
     }
   })
 
-  let toggleOverlayHotkey = 'CommandOrControl+6'
+  mainWindow.setMaximizable(false)
+  let toggleOverlayHotkey = 'CommandOrControl+7'
   let isOverlayOn = false
 
   globalShortcut.register(toggleOverlayHotkey, () => {
     isOverlayOn = !isOverlayOn
     mainWindow.setIgnoreMouseEvents(isOverlayOn)
     mainWindow.webContents.send('overlay-mode', isOverlayOn)
-    console.log('overlay', isOverlayOn)
   })
 
   mainWindow.setAlwaysOnTop(true, 'screen')
@@ -63,16 +65,16 @@ app.whenReady().then(() => {
     optimizer.watchWindowShortcuts(window)
   })
 
-  ipcMain.on('close-window', () => {
-    const currentWindow = BrowserWindow.getFocusedWindow()
-    if (currentWindow) {
-      currentWindow.close
-    }
-  })
   ipcMain.on('minimize-window', () => {
     const currentWindow = BrowserWindow.getFocusedWindow()
     if (currentWindow) {
-      currentWindow.minimize
+      currentWindow.minimize()
+    }
+  })
+  ipcMain.on('close-window', () => {
+    const currentWindow = BrowserWindow.getFocusedWindow()
+    if (currentWindow) {
+      currentWindow.close()
     }
   })
 
