@@ -38,7 +38,7 @@ const TopBar = () => {
         <div className="relative group">
           <span className="hover:brightness-150">&#8520;</span>
           <span className="font-mono absolute invisible group-hover:visible w-[200px] bg-emerald-900/50 text-slate-100 text-[12px] text-center py-1 rounded-md z-10 top-1 left-[250%] after:absolute after:top-[25%] after:right-full after:-mt-1 after:border-[5px] after:border-solid after:border-transparent after:border-r-emerald-900/50">
-            Presiona F10 para el modo superposición.
+            Presiona Ctrl+7 para el modo superposición.
           </span>
         </div>
       </div>

@@ -22,7 +22,7 @@ function createWindow() {
   })
 
   mainWindow.setMaximizable(false)
-  let toggleOverlayHotkey = 'F10'
+  let toggleOverlayHotkey = 'CommandOrControl+7'
   let isOverlayOn = false
 
   globalShortcut.register(toggleOverlayHotkey, () => {

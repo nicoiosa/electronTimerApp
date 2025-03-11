@@ -109,13 +109,13 @@ const Timer = ({ isOverlay, isEditing, setIsEditing }) => {
             {isActive ? (
               <>
                 <button
-                  className="hover:brightness-150 cursor-pointer text-2xl text-amber-400 m-2"
+                  className="hover:brightness-150 cursor-pointer text-2xl text-amber-400 m-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
                   onClick={() => setIsActive(false)}
                 >
                   &#9612;&#9612;
                 </button>
                 <button
-                  className="hover:brightness-150 cursor-pointer text-5xl text-rose-600 m-2"
+                  className="hover:brightness-150 cursor-pointer text-5xl text-rose-600 m-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
                   onClick={resetTimer}
                 >
                   &#9632;
