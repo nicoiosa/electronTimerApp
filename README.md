@@ -1,10 +1,11 @@
 # timer-app
 
-An Electron application with React
+A timer application made with Electron and React.
 
-## Recommended IDE Setup
+## Technologies Used
 
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- electron-vite
+- tailwindcss
 
 ## Project Setup
 
